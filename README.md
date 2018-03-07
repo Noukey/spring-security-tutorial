@@ -1,5 +1,5 @@
 # spring-security-tutorial
-spring-security完整示例，数据库动态管理权限
+spring-security完整示例，实现数据库动态管理权限
 
 相关知识：
 - spring-security提供的UserDetails、GrantedAuthority、UserDetailsService接口;
