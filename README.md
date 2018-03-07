@@ -50,8 +50,9 @@ spring-security完整示例，数据库动态管理权限
 
 ```
   
-  
-配置一个FilterSecurityInterceptor过滤器并加载`http.addFilterBefore(createFilterInterceptor(), FilterSecurityInterceptor.class);`
+------------------------------   
+配置一个FilterSecurityInterceptor过滤器并加载     
+`http.addFilterBefore(createFilterInterceptor(), FilterSecurityInterceptor.class);`
 ```java
   protected FilterSecurityInterceptor createFilterInterceptor(){
 		FilterSecurityInterceptor filterInerceptor=new FilterSecurityInterceptor();
@@ -61,7 +62,7 @@ spring-security完整示例，数据库动态管理权限
 	}
 ```
 
-
+-----------------------------------  
 参考：
 - http://blog.csdn.net/u012373815/article/details/54633046
 - https://www.gitbook.com/book/waylau/spring-security-tutorial/details
