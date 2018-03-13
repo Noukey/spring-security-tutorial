@@ -25,10 +25,10 @@ public class UserDecisionManager implements AccessDecisionManager {
             throw new AccessDeniedException("permission denied");
         }
 
-        //当前用户拥有的角色集合
+        //当前用户拥有的权限集合
         List<String> roleCodes = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList());
 
-        //访问路径所需要的角色集合
+        //访问路径所需要的权限集合
         List<String> configRoleCodes = configAttributes.stream().map(ConfigAttribute::getAttribute).collect(Collectors.toList());
         if(roleCodes.stream().anyMatch(x->configRoleCodes.contains(x))){
         	return;

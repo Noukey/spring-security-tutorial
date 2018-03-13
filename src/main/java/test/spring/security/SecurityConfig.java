@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private AccessDecisionManager accessDecisionManager;
 	@Autowired
-	private FilterInvocationSecurityMetadataSource newSource;
+	private FilterInvocationSecurityMetadataSource securityMetadataSource;
 	
 	
 
@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected FilterSecurityInterceptor createFilterInterceptor(){
 		FilterSecurityInterceptor filterInerceptor=new FilterSecurityInterceptor();
 		filterInerceptor.setAccessDecisionManager(accessDecisionManager);
-		filterInerceptor.setSecurityMetadataSource(newSource);
+		filterInerceptor.setSecurityMetadataSource(securityMetadataSource);
 		return filterInerceptor;
 	}
 
