@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import test.spring.security.domain.User;
+import test.spring.security.domain.UserForm;
+import test.spring.security.domain.testForm;
 import test.spring.security.repository.UserRepository;
 
 @Service
@@ -35,5 +37,11 @@ public class UserServiceImpl implements UserService,UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		return userRepository.findByUsername(username);
+	}
+
+	@Override
+	public List<User> listUsers(UserForm user) {
+		// TODO Auto-generated method stub
+		return userRepository.findAll(testForm.where(user));
 	}
 }
