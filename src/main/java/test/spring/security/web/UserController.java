@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import test.spring.security.domain.User;
-import test.spring.security.domain.UserForm;
 import test.spring.security.service.UserService;
+import test.spring.security.web.form.UserQueryForm;
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -38,7 +38,7 @@ public class UserController {
 	}
 	
 	@GetMapping("listUsers")
-	public ModelAndView listUsers(Model model,UserForm user) {
+	public ModelAndView listUsers(Model model,UserQueryForm user) {
 		model.addAttribute("userList", userService.listUsers(user));
 		return new ModelAndView("users/list", "userModel", model);
 	}
