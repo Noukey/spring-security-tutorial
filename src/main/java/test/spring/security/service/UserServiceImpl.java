@@ -9,9 +9,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import test.spring.security.domain.User;
-import test.spring.security.domain.UserForm;
-import test.spring.security.domain.testForm;
+import test.spring.security.repository.DynamicQuery;
 import test.spring.security.repository.UserRepository;
+import test.spring.security.web.form.UserQueryForm;
 
 @Service
 public class UserServiceImpl implements UserService,UserDetailsService {
@@ -40,8 +40,8 @@ public class UserServiceImpl implements UserService,UserDetailsService {
 	}
 
 	@Override
-	public List<User> listUsers(UserForm user) {
+	public List<User> listUsers(UserQueryForm user) {
 		// TODO Auto-generated method stub
-		return userRepository.findAll(testForm.where(user));
+		return userRepository.findAll(DynamicQuery.where(user));
 	}
 }

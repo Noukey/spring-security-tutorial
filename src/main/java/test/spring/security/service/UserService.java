@@ -3,7 +3,7 @@ package test.spring.security.service;
 import java.util.List;
 
 import test.spring.security.domain.User;
-import test.spring.security.domain.UserForm;
+import test.spring.security.web.form.UserQueryForm;
 
 public interface UserService {
 
@@ -11,6 +11,6 @@ public interface UserService {
 
 	void addUser(User user);
 
-	List<User> listUsers(UserForm user);
+	List<User> listUsers(UserQueryForm user);
 
 }
